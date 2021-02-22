@@ -53,7 +53,7 @@ DEFAULTS = {
     "generate_branch_bundle": False,
 }
 
-DONT_DUMP = ["verbose", "fast"]
+DONT_DUMP = ["verbose", "fast", "silent"]
 
 
 class Settings(object):

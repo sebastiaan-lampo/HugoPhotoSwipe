@@ -71,6 +71,12 @@ def parse_args():
         help=("Fast mode " "(tries less potential crops)"),
     )
     parser.add_argument(
+        "-s",
+        "--silent",
+        action="store_true",
+        help=("Silent mode " "(will not ask for confirmation on delete)"),
+    )
+    parser.add_argument(
         "-V", "--version", action="version", version=__version__,
     )
     parser.add_argument(
@@ -89,6 +95,7 @@ def parse_args():
     )
     settings.verbose = args.loglevel == logging.INFO
     settings.fast = args.fast
+    settings.silent = args.silent
     return args.command, args.album
 
 

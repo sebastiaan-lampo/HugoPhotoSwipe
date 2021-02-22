@@ -60,6 +60,10 @@ def yaml_field_to_file(fid, data, field, indent="", force_string=False):
 
 def question_yes_no(question, default=True):
     """ Ask a yes/no question from the user and be persistent """
+    from .conf import settings
+    if settings.silent:
+        return default
+
     if default:
         extension = "[Y/n/q]"
     else:
